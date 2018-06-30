@@ -8,7 +8,7 @@ import android.util.AttributeSet
 import android.view.View
 import com.example.alexisardouin.mybeats.R
 
-class ScoreView : View {
+class MeasureView : View {
     constructor(context: Context) : this(context, null)
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
 
@@ -16,26 +16,26 @@ class ScoreView : View {
         init()
     }
 
-    private val lineCount: Int = 5
+    val lineCount: Int = 9
+    private val visibleLineCount: Int = 5
+    private val invisibleLineCount: Int = lineCount - visibleLineCount
 
-    private var interlineHeight : Float = 0f
+
+    var interlineHeight: Float = 0f
     private var lineColor: Int = 0
 
     private lateinit var paint: Paint
 
-
     private fun init() {
-        interlineHeight = this.resources.getDimension(R.dimen.score_interline_height)
         lineColor = ContextCompat.getColor(context,R.color.lineColor)
         paint = Paint()
     }
 
-
-
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
+        interlineHeight = measuredHeight.toFloat() / lineCount
 
-        for (i in 0..lineCount) {
+        for (i in (invisibleLineCount) / 2 until lineCount - invisibleLineCount / 2) {
             paint.color = lineColor
             canvas?.drawLine(0f, (i*interlineHeight), measuredWidth.toFloat(), (i*interlineHeight),paint)
         }

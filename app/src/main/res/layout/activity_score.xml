@@ -1,12 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"><!--
+    android:id="@+id/sheet"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
 
-    <com.example.alexisardouin.mybeats.views.ScoreView
+    <com.example.alexisardouin.mybeats.views.MeasureView
+        android:id="@+id/measure"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/white"/>
--->
-</ConstraintLayout>
+        android:layout_height="90dp"
+        android:background="@android:color/background_light"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <Button
+        android:id="@+id/up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="UP" />
+
+    <Button
+        android:id="@+id/left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/up"
+        app:layout_constraintEnd_toStartOf="@id/up"
+        android:text="LEFT" />
+
+    <Button
+        android:id="@+id/right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/up"
+        app:layout_constraintStart_toEndOf="@id/up"
+        android:text="RIGHT" />
+
+    <Button
+        android:id="@+id/down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/up"
+        app:layout_constraintEnd_toEndOf="@id/up"
+        app:layout_constraintTop_toBottomOf="@id/left"
+        android:text="DOWN" />
+
+    <!--<com.example.alexisardouin.mybeats.views.NoteView
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        app:layout_constraintStart_toStartOf="@id/measure"
+        app:layout_constraintEnd_toEndOf="@id/measure"
+        app:layout_constraintTop_toTopOf="@id/measure"
+        app:layout_constraintBottom_toBottomOf="@id/measure"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintHorizontal_bias="0.10"/>
+
+    <com.example.alexisardouin.mybeats.views.NoteView
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        app:layout_constraintStart_toStartOf="@id/measure"
+        app:layout_constraintEnd_toEndOf="@id/measure"
+        app:layout_constraintTop_toTopOf="@id/measure"
+        app:layout_constraintBottom_toBottomOf="@id/measure"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintHorizontal_bias="0.25"/>
+
+    <com.example.alexisardouin.mybeats.views.NoteView
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        app:layout_constraintStart_toStartOf="@id/measure"
+        app:layout_constraintEnd_toEndOf="@id/measure"
+        app:layout_constraintTop_toTopOf="@id/measure"
+        app:layout_constraintBottom_toBottomOf="@id/measure"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintHorizontal_bias="0.50"/>
+
+    <com.example.alexisardouin.mybeats.views.NoteView
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        app:layout_constraintStart_toStartOf="@id/measure"
+        app:layout_constraintEnd_toEndOf="@id/measure"
+        app:layout_constraintTop_toTopOf="@id/measure"
+        app:layout_constraintBottom_toBottomOf="@id/measure"
+        app:layout_constraintVertical_bias="0.125"
+        app:layout_constraintHorizontal_bias="0.75"/>
+
+    <com.example.alexisardouin.mybeats.views.NoteView
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        app:layout_constraintStart_toStartOf="@id/measure"
+        app:layout_constraintEnd_toEndOf="@id/measure"
+        app:layout_constraintTop_toTopOf="@id/measure"
+        app:layout_constraintBottom_toBottomOf="@id/measure"
+        app:layout_constraintVertical_bias="-0.25"
+        app:layout_constraintHorizontal_bias="0.90"/>-->
+
+</android.support.constraint.ConstraintLayout>
