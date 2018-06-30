@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/sheet"
+    android:focusableInTouchMode="true"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
@@ -15,6 +16,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD" />
 
 
     <Button
@@ -48,7 +56,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="@id/up"
         app:layout_constraintEnd_toEndOf="@id/up"
-        app:layout_constraintTop_toBottomOf="@id/left"
+        app:layout_constraintTop_toBottomOf="@id/up"
         android:text="DOWN" />
 
     <!--<com.example.alexisardouin.mybeats.views.NoteView
