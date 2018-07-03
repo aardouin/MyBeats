@@ -1,10 +1,12 @@
 package com.example.alexisardouin.mybeats.models
 
 import kotlin.math.max
-import kotlin.math.min
 
+import kotlin.math.min
 class Note(var height: Float,
            var position: Float) {
+    private val steps = 8
+
     fun moveUp() {
         height = max(height - 1f, 0f)
     }
@@ -14,11 +16,11 @@ class Note(var height: Float,
     }
 
     fun moveLeft() {
-        position = max(position - 0.1f, 0f)
+        position = max(position - 1f / (steps - 1), 0f)
     }
 
     fun moveRight() {
-        position = min(position + 0.1f, 1f)
+        position = min(position + 1f / (steps - 1), 1f)
     }
 }
 
